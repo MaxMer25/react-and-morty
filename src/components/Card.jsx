@@ -12,7 +12,6 @@ export default function Card() {
     async function fetchData() {
       const response = await fetch(urlToFetch);
       const data = await response.json();
-      console.log(data);
       setApiData(data.results);
     }
     fetchData();
@@ -22,7 +21,6 @@ export default function Card() {
     <CardContainer>
       <ul>
         {apiData.map(function (character) {
-          console.log(character);
           return (
             <li>
               <img src={character.image} alt="character" />;
