@@ -23,7 +23,7 @@ export default function Card() {
         {apiData.map(function (character) {
           return (
             <li>
-              <img src={character.image} alt="character" />;
+              <img src={character.image} alt={character.name} />;
             </li>
           );
         })}
