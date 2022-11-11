@@ -1,9 +1,9 @@
-import CardList from "../components/CardList";
+import Card from "../components/Card";
 
-export default function Home() {
+export default function Home({ apiData }) {
   return (
     <>
-      <CardList />
+      <Card apiData={apiData} />
     </>
   );
 }
