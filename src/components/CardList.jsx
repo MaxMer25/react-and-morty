@@ -4,8 +4,6 @@ export default function CardList() {
   return (
     <>
       <Card />
-      <Card />
-      <Card />
     </>
   );
 }
