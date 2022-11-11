@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
   return (
@@ -6,13 +7,13 @@ export default function Navigation() {
       <StyledNavigation>
         <ul>
           <li>
-            <a href="">Homepage</a>
+            <Link to="/"> Home </Link>
           </li>
           <li>
-            <a href="">Favorite</a>
+            <Link to="/favorites"> Favorites </Link>
           </li>
           <li>
-            <a href="">Random</a>
+            <Link to="/random"> Random </Link>
           </li>
           <li>other</li>
         </ul>
@@ -22,6 +23,11 @@ export default function Navigation() {
 }
 
 const StyledNavigation = styled.nav`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+
   ul {
     list-style-type: none;
     display: flex;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Card() {
   // Fetching Data
@@ -21,9 +22,19 @@ export default function Card() {
     <CardContainer>
       <ul>
         {apiData.map(function (character) {
+          console.log(character);
           return (
-            <li>
+            <li key={character.id}>
               <img src={character.image} alt={character.name} />
+              <h2>{character.name}</h2>
+              <Link
+                to={{
+                  pathname: `/character/${character.id}`,
+                  state: { character },
+                }}
+              >
+                <button> show more</button>
+              </Link>
             </li>
           );
         })}
@@ -42,5 +53,8 @@ const CardContainer = styled.div`
   }
   li {
     list-style: none;
+  }
+  h2 {
+    margin-top: -1%;
   }
 `;
