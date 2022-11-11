@@ -35,7 +35,7 @@ function App() {
             path={"character/:characterId"}
             element={<Character apiData={apiData} />}
           />
-          <Route path="favorites" element={<Favorites />} />
+          <Route path="favorites" element={<Favorites apiData={apiData} />} />
           <Route path="random" element={<Random />} />
           <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
         </Routes>
