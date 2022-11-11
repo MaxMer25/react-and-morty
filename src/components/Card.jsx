@@ -2,22 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Card() {
-  // Fetching Data
-
-  const urlToFetch = "https://rickandmortyapi.com/api/character";
-
-  const [apiData, setApiData] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(urlToFetch);
-      const data = await response.json();
-      setApiData(data.results);
-    }
-    fetchData();
-  }, []);
-
+export default function Card({ apiData }) {
   return (
     <CardContainer>
       <ul>
@@ -30,7 +15,6 @@ export default function Card() {
               <Link
                 to={{
                   pathname: `/character/${character.id}`,
-                  state: { character },
                 }}
               >
                 <button> show more</button>
